@@ -1,6 +1,6 @@
 # nvdiffrecmc Experiments for "ERROR: Evaluation of Reconstruction and Rendering for Object Relighting"
 
-Please, find the modified code base at:  
+Please, find the modified code base at:  https://anonymous.4open.science/r/nvdiffrecmc_baseline-1EEC/readme_nvdiffrecmc.md
 
 ## Dataset
 
