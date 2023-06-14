@@ -1,0 +1,19 @@
+{ 
+    "ref_mesh": "/scratch/tcheng12/dataset_nerf/porcelain_mug",
+    "random_textures": true,
+    "iter": 1500,
+    "save_interval": 100,
+    "texture_res": [ 1024, 1024 ],
+    "train_res": [1165, 1746],
+    "batch": 4,
+    "learning_rate": [0.03, 0.001],
+    "dmtet_grid" : 128,
+    "mesh_scale" : 0.4,
+    "validate" : true,
+    "n_samples" : 12,
+    "laplace_scale" : 6000,
+    "denoiser" : "bilateral",
+    "display": [{"latlong" : true}, {"bsdf" : "kd"}, {"bsdf" : "ks"}, {"bsdf" : "normal"}],
+    "background" : "white",
+    "out_dir": "my_porcelain_mug"
+}

@@ -1,0 +1,18 @@
+{ 
+    "ref_mesh": "/homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/scan69",  
+    "base_mesh": "/homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/mesh/69.obj",
+    "random_textures": true, 
+    "iter": 5000,
+    "save_interval": 100,
+    "lock_pos": true,
+    "texture_res": [1024, 1024],
+    "train_res": [600, 800],
+    "batch": 8,
+    "learning_rate": [0.03, 0.01], 
+    "validate" : true,
+    "n_samples" : 8, 
+    "denoiser" : "bilateral",
+    "display": [{"latlong" : true}, {"bsdf" : "kd"}, {"bsdf" : "ks"}, {"bsdf" : "normal"}],
+    "background" : "white",
+    "out_dir": "scan69"
+}

@@ -1,0 +1,205 @@
+====== Scene: scan37 ======
+Using /homes/sanskar/.cache/torch_extensions/py39_cu116 as PyTorch extensions root...
+Creating extension directory /homes/sanskar/.cache/torch_extensions/py39_cu116/optixutils_plugin...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /homes/sanskar/.cache/torch_extensions/py39_cu116/optixutils_plugin/build.ninja...
+Building extension module optixutils_plugin...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/4] /homes/sanskar/miniconda3/envs/nvdiffrec/bin/nvcc  -DTORCH_EXTENSION_NAME=optixutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -DNVDR_TORCH -std=c++14 -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/c_src/denoising.cu -o denoising.cuda.o 
+[2/4] c++ -MMD -MF optix_wrapper.o.d -DTORCH_EXTENSION_NAME=optixutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++14 -DNVDR_TORCH -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/c_src/optix_wrapper.cpp -o optix_wrapper.o 
+[3/4] c++ -MMD -MF torch_bindings.o.d -DTORCH_EXTENSION_NAME=optixutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++14 -DNVDR_TORCH -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/optixutils/c_src/torch_bindings.cpp -o torch_bindings.o 
+[4/4] c++ denoising.cuda.o optix_wrapper.o torch_bindings.o -shared -lcuda -lnvrtc -L/homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda_cu -ltorch_cuda_cpp -ltorch -ltorch_python -L/homes/sanskar/miniconda3/envs/nvdiffrec/lib64 -lcudart -o optixutils_plugin.so
+Loading extension module optixutils_plugin...
+Config / Flags:
+---------
+iter 1000
+batch 5
+spp 1
+layers 1
+train_res [600, 800]
+display_res [600, 800]
+texture_res [1024, 1024]
+display_interval 0
+save_interval 100
+learning_rate [0.03, 0.001]
+custom_mip False
+background white
+loss logl1
+out_dir out/scan37
+config configs/37.json
+ref_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/scan37
+base_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/mesh/37.obj
+validate True
+n_samples 8
+bsdf pbr
+denoiser bilateral
+denoiser_demodulate True
+mtl_override None
+dmtet_grid 64
+mesh_scale 2.1
+envlight None
+env_scale 1.0
+probe_res 256
+learn_lighting True
+display [{'latlong': True}, {'bsdf': 'kd'}, {'bsdf': 'ks'}, {'bsdf': 'normal'}]
+transparency False
+lock_light False
+lock_pos True
+sdf_regularizer 0.2
+laplace relative
+laplace_scale 3000.0
+pre_load True
+no_perturbed_nrm False
+decorrelated False
+kd_min [0.0, 0.0, 0.0, 0.0]
+kd_max [1.0, 1.0, 1.0, 1.0]
+ks_min [0.0, 0.08, 0.0]
+ks_max [0.0, 1.0, 1.0]
+nrm_min [-1.0, -1.0, 0.0]
+nrm_max [1.0, 1.0, 1.0]
+clip_max_norm 0.0
+cam_near_far [0.1, 1000.0]
+lambda_kd 0.1
+lambda_ks 0.05
+lambda_nrm 0.025
+lambda_nrm2 0.25
+lambda_chroma 0.0
+lambda_diffuse 0.15
+lambda_specular 0.0025
+random_textures True
+---------
+/homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+End of OptiXStateWrapper 
+Using /homes/sanskar/.cache/torch_extensions/py39_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /homes/sanskar/.cache/torch_extensions/py39_cu116/renderutils_plugin/build.ninja...
+Building extension module renderutils_plugin...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+DatasetLLFF: 45 images with shape [600, 800]
+ ######### DatasetLLFF: auto-centering at [ 43.40744 -18.55065 613.7842 ] ############ 
+DatasetLLFF: 4 images with shape [600, 800]
+ ######### DatasetLLFF: auto-centering at [ 43.40744 -18.55065 613.7842 ] ############ 
+Cuda path /homes/sanskar/miniconda3/envs/nvdiffrec
+Base mesh has 251515 triangles and 126450 vertices.
+Avg edge length: 2.684922
+[1/7] c++ -MMD -MF common.o.d -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++14 -DNVDR_TORCH -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/common.cpp -o common.o 
+[2/7] /homes/sanskar/miniconda3/envs/nvdiffrec/bin/nvcc  -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -DNVDR_TORCH -std=c++14 -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/mesh.cu -o mesh.cuda.o 
+[3/7] /homes/sanskar/miniconda3/envs/nvdiffrec/bin/nvcc  -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -DNVDR_TORCH -std=c++14 -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/normal.cu -o normal.cuda.o 
+[4/7] /homes/sanskar/miniconda3/envs/nvdiffrec/bin/nvcc  -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -DNVDR_TORCH -std=c++14 -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/loss.cu -o loss.cuda.o 
+[5/7] /homes/sanskar/miniconda3/envs/nvdiffrec/bin/nvcc  -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -DNVDR_TORCH -std=c++14 -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/bsdf.cu -o bsdf.cuda.o 
+[6/7] c++ -MMD -MF torch_bindings.o.d -DTORCH_EXTENSION_NAME=renderutils_plugin -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/TH -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/include/THC -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include -isystem /homes/sanskar/miniconda3/envs/nvdiffrec/include/python3.9 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++14 -DNVDR_TORCH -c /homes/sanskar/mcnvdiffrec/nvdiffrecmc/render/renderutils/c_src/torch_bindings.cpp -o torch_bindings.o 
+[7/7] c++ mesh.cuda.o loss.cuda.o bsdf.cuda.o normal.cuda.o common.o torch_bindings.o -shared -lcuda -lnvrtc -L/homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda_cu -ltorch_cuda_cpp -ltorch -ltorch_python -L/homes/sanskar/miniconda3/envs/nvdiffrec/lib64 -lcudart -o renderutils_plugin.so
+Loading extension module renderutils_plugin...
+iter=    0, img_loss=0.421284, reg_loss=0.000000, lr=0.00000, time=482.2 ms, rem=8.04 m
+iter=   10, img_loss=0.490513, reg_loss=0.000000, lr=0.00000, time=261.9 ms, rem=4.32 m
+iter=   20, img_loss=0.496747, reg_loss=0.000000, lr=0.00000, time=262.6 ms, rem=4.29 m
+iter=   30, img_loss=0.472543, reg_loss=0.000000, lr=0.00000, time=263.1 ms, rem=4.25 m
+iter=   40, img_loss=0.486920, reg_loss=0.000000, lr=0.00000, time=263.6 ms, rem=4.22 m
+iter=   50, img_loss=0.495641, reg_loss=0.000000, lr=0.00000, time=263.5 ms, rem=4.17 m
+iter=   60, img_loss=0.463875, reg_loss=0.000000, lr=0.00000, time=264.4 ms, rem=4.14 m
+iter=   70, img_loss=0.502511, reg_loss=0.000000, lr=0.00000, time=265.0 ms, rem=4.11 m
+iter=   80, img_loss=0.479568, reg_loss=0.000000, lr=0.00000, time=265.1 ms, rem=4.07 m
+iter=   90, img_loss=0.484584, reg_loss=0.000000, lr=0.00000, time=265.6 ms, rem=4.03 m
+iter=  100, img_loss=0.484559, reg_loss=0.000000, lr=0.00000, time=266.0 ms, rem=3.99 m
+iter=  110, img_loss=0.476248, reg_loss=0.000000, lr=0.00000, time=265.9 ms, rem=3.94 m
+iter=  120, img_loss=0.499171, reg_loss=0.000000, lr=0.00000, time=266.7 ms, rem=3.91 m
+iter=  130, img_loss=0.471507, reg_loss=0.000000, lr=0.00000, time=267.2 ms, rem=3.87 m
+iter=  140, img_loss=0.489102, reg_loss=0.000000, lr=0.00000, time=267.5 ms, rem=3.83 m
+iter=  150, img_loss=0.523500, reg_loss=0.000000, lr=0.00000, time=267.8 ms, rem=3.79 m
+iter=  160, img_loss=0.471320, reg_loss=0.000000, lr=0.00000, time=268.6 ms, rem=3.76 m
+iter=  170, img_loss=0.467430, reg_loss=0.000000, lr=0.00000, time=268.8 ms, rem=3.72 m
+iter=  180, img_loss=0.467598, reg_loss=0.000000, lr=0.00000, time=268.7 ms, rem=3.67 m
+iter=  190, img_loss=0.487902, reg_loss=0.000000, lr=0.00000, time=269.1 ms, rem=3.63 m
+iter=  200, img_loss=0.506044, reg_loss=0.000000, lr=0.00000, time=269.0 ms, rem=3.59 m
+iter=  210, img_loss=0.501738, reg_loss=0.000000, lr=0.00000, time=269.1 ms, rem=3.54 m
+iter=  220, img_loss=0.502451, reg_loss=0.000000, lr=0.00000, time=269.4 ms, rem=3.50 m
+iter=  230, img_loss=0.503340, reg_loss=0.000000, lr=0.00000, time=270.2 ms, rem=3.47 m
+iter=  240, img_loss=0.522511, reg_loss=0.000000, lr=0.00000, time=270.2 ms, rem=3.42 m
+iter=  250, img_loss=0.475693, reg_loss=0.000000, lr=0.00000, time=270.2 ms, rem=3.38 m
+iter=  260, img_loss=0.500641, reg_loss=0.000000, lr=0.00000, time=270.3 ms, rem=3.33 m
+iter=  270, img_loss=0.508277, reg_loss=0.000000, lr=0.00000, time=270.4 ms, rem=3.29 m
+iter=  280, img_loss=0.503375, reg_loss=0.000000, lr=0.00000, time=270.4 ms, rem=3.24 m
+iter=  290, img_loss=0.457050, reg_loss=0.000000, lr=0.00000, time=270.5 ms, rem=3.20 m
+iter=  300, img_loss=0.478618, reg_loss=0.000000, lr=0.00000, time=270.6 ms, rem=3.16 m
+iter=  310, img_loss=0.493809, reg_loss=0.000000, lr=0.00000, time=270.7 ms, rem=3.11 m
+iter=  320, img_loss=0.501139, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=3.07 m
+iter=  330, img_loss=0.507041, reg_loss=0.000000, lr=0.00000, time=270.7 ms, rem=3.02 m
+iter=  340, img_loss=0.499586, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.98 m
+iter=  350, img_loss=0.504902, reg_loss=0.000000, lr=0.00000, time=270.7 ms, rem=2.93 m
+iter=  360, img_loss=0.496157, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.89 m
+iter=  370, img_loss=0.528977, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.84 m
+iter=  380, img_loss=0.488989, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.80 m
+iter=  390, img_loss=0.488967, reg_loss=0.000000, lr=0.00000, time=270.7 ms, rem=2.75 m
+iter=  400, img_loss=0.502608, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.71 m
+iter=  410, img_loss=0.521826, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.66 m
+iter=  420, img_loss=0.485207, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.62 m
+iter=  430, img_loss=0.479067, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.57 m
+iter=  440, img_loss=0.478688, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.53 m
+iter=  450, img_loss=0.488579, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=2.49 m
+iter=  460, img_loss=0.472664, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.44 m
+iter=  470, img_loss=0.515851, reg_loss=0.000000, lr=0.00000, time=271.0 ms, rem=2.39 m
+iter=  480, img_loss=0.529541, reg_loss=0.000000, lr=0.00000, time=270.9 ms, rem=2.35 m
+iter=  490, img_loss=0.479275, reg_loss=0.000000, lr=0.00000, time=271.0 ms, rem=2.30 m
+iter=  500, img_loss=0.474268, reg_loss=0.000000, lr=0.00000, time=270.8 ms, rem=2.26 m
+iter=  510, img_loss=0.483876, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=2.21 m
+iter=  520, img_loss=0.525148, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=2.17 m
+iter=  530, img_loss=0.496047, reg_loss=0.000000, lr=0.00000, time=271.1 ms, rem=2.12 m
+iter=  540, img_loss=0.523030, reg_loss=0.000000, lr=0.00000, time=271.1 ms, rem=2.08 m
+iter=  550, img_loss=0.489813, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=2.03 m
+iter=  560, img_loss=0.493976, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.99 m
+iter=  570, img_loss=0.504384, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.94 m
+iter=  580, img_loss=0.461064, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.90 m
+iter=  590, img_loss=0.432931, reg_loss=0.000000, lr=0.00000, time=271.1 ms, rem=1.85 m
+iter=  600, img_loss=0.495143, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.81 m
+iter=  610, img_loss=0.519828, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.76 m
+iter=  620, img_loss=0.487282, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.72 m
+iter=  630, img_loss=0.509081, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.67 m
+iter=  640, img_loss=0.477062, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.63 m
+iter=  650, img_loss=0.467415, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.58 m
+iter=  660, img_loss=0.502348, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.54 m
+iter=  670, img_loss=0.518557, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.49 m
+iter=  680, img_loss=0.467000, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.45 m
+iter=  690, img_loss=0.497445, reg_loss=0.000000, lr=0.00000, time=271.1 ms, rem=1.40 m
+iter=  700, img_loss=0.483049, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.36 m
+iter=  710, img_loss=0.491268, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.31 m
+iter=  720, img_loss=0.504303, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.27 m
+iter=  730, img_loss=0.482423, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.22 m
+iter=  740, img_loss=0.492586, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=1.18 m
+iter=  750, img_loss=0.470088, reg_loss=0.000000, lr=0.00000, time=271.1 ms, rem=1.13 m
+iter=  760, img_loss=0.514033, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.09 m
+iter=  770, img_loss=0.491673, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=1.04 m
+iter=  780, img_loss=0.485791, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=59.69 s
+iter=  790, img_loss=0.479103, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=56.97 s
+iter=  800, img_loss=0.504334, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=54.24 s
+iter=  810, img_loss=0.510407, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=51.57 s
+iter=  820, img_loss=0.516959, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=48.85 s
+iter=  830, img_loss=0.500909, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=46.13 s
+iter=  840, img_loss=0.502095, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=43.42 s
+iter=  850, img_loss=0.497958, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=40.70 s
+iter=  860, img_loss=0.483284, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=37.98 s
+iter=  870, img_loss=0.498214, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=35.27 s
+iter=  880, img_loss=0.498356, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=32.56 s
+iter=  890, img_loss=0.504950, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=29.85 s
+iter=  900, img_loss=0.483329, reg_loss=0.000000, lr=0.00000, time=271.2 ms, rem=27.12 s
+iter=  910, img_loss=0.503975, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=24.43 s
+iter=  920, img_loss=0.513739, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=21.70 s
+iter=  930, img_loss=0.485863, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=18.99 s
+iter=  940, img_loss=0.488122, reg_loss=0.000000, lr=0.00000, time=271.3 ms, rem=16.28 s
+iter=  950, img_loss=0.514852, reg_loss=0.000000, lr=0.00000, time=271.4 ms, rem=13.57 s
+iter=  960, img_loss=0.498918, reg_loss=0.000000, lr=0.00000, time=271.8 ms, rem=10.87 s
+iter=  970, img_loss=0.490625, reg_loss=0.000000, lr=0.00000, time=272.2 ms, rem=8.17 s
+iter=  980, img_loss=0.465215, reg_loss=0.000000, lr=0.00000, time=272.0 ms, rem=5.44 s
+iter=  990, img_loss=0.509317, reg_loss=0.000000, lr=0.00000, time=272.1 ms, rem=2.72 s
+iter= 1000, img_loss=0.488216, reg_loss=0.000000, lr=0.00000, time=272.1 ms, rem=0.00 s
+Running validation
+MSE,      PSNR
+0.11664612, 9.344
+Writing mesh:  out/scan37/mesh/mesh.obj
+    writing 126450 vertices
+    writing 147910 texcoords
+    writing 126450 normals
+    writing 251515 faces
+Writing material:  out/scan37/mesh/mesh.mtl
+Done exporting mesh
+OptiXStateWrapper destructor 

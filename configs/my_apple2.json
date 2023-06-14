@@ -1,0 +1,18 @@
+{ 
+    "ref_mesh": "/scratch/tcheng12/dataset_nerf/apple",
+    "base_mesh": "/scratch/tcheng12/dataset_mesh/apple.obj",
+    "random_textures": true, 
+    "iter": 1100,
+    "save_interval": 100,
+    "lock_pos": true,
+    "texture_res": [ 1024, 1024 ],
+    "train_res": [1165, 1746],
+    "batch": 6,
+    "learning_rate": [0.03, 0.001], 
+    "validate" : true,
+    "n_samples" : 8, 
+    "denoiser" : "bilateral",
+    "display": [{"latlong" : true}, {"bsdf" : "kd"}, {"bsdf" : "ks"}, {"bsdf" : "normal"}],
+    "background" : "white",
+    "out_dir": "my_apple2"
+}

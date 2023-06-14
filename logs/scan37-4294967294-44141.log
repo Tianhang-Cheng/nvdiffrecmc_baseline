@@ -1,0 +1,81 @@
+====== Scene: scan37 ======
+Using /homes/sanskar/.cache/torch_extensions/py39_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /homes/sanskar/.cache/torch_extensions/py39_cu116/optixutils_plugin/build.ninja...
+Building extension module optixutils_plugin...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module optixutils_plugin...
+Using mesh scale : 2.1, center : [ 0.01529887 -0.06911839 -0.2153489 ]
+Config / Flags:
+---------
+iter 1000
+batch 5
+spp 1
+layers 1
+train_res [600, 800]
+display_res [600, 800]
+texture_res [1024, 1024]
+display_interval 0
+save_interval 100
+learning_rate [0.03, 0.001]
+custom_mip False
+background white
+loss logl1
+out_dir out/scan37
+config configs/37.json
+ref_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/scan37
+base_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/mesh/37.obj
+validate True
+n_samples 8
+bsdf pbr
+denoiser bilateral
+denoiser_demodulate True
+mtl_override None
+dmtet_grid 64
+mesh_scale 2.1
+envlight None
+env_scale 1.0
+probe_res 256
+learn_lighting True
+display [{'latlong': True}, {'bsdf': 'kd'}, {'bsdf': 'ks'}, {'bsdf': 'normal'}]
+transparency False
+lock_light False
+lock_pos True
+sdf_regularizer 0.2
+laplace relative
+laplace_scale 3000.0
+pre_load True
+no_perturbed_nrm False
+decorrelated False
+kd_min [0.0, 0.0, 0.0, 0.0]
+kd_max [1.0, 1.0, 1.0, 1.0]
+ks_min [0.0, 0.08, 0.0]
+ks_max [0.0, 1.0, 1.0]
+nrm_min [-1.0, -1.0, 0.0]
+nrm_max [1.0, 1.0, 1.0]
+clip_max_norm 0.0
+cam_near_far [0.1, 1000.0]
+lambda_kd 0.1
+lambda_ks 0.05
+lambda_nrm 0.025
+lambda_nrm2 0.25
+lambda_chroma 0.0
+lambda_diffuse 0.15
+lambda_specular 0.0025
+random_textures True
+centre [ 0.01529887 -0.06911839 -0.2153489 ]
+---------
+/homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+DatasetLLFF: 45 images with shape [600, 800]
+Auto centering at [ 0.01529887 -0.06911839 -0.2153489 ]
+DatasetLLFF: 4 images with shape [600, 800]
+Auto centering at [ 0.01529887 -0.06911839 -0.2153489 ]
+<render.mesh.Mesh object at 0x7f4164694a00>
+Traceback (most recent call last):
+  File "/homes/sanskar/mcnvdiffrec/nvdiffrecmc/train.py", line 696, in <module>
+    geometry = DLMesh(base_mesh, FLAGS)
+  File "/homes/sanskar/mcnvdiffrec/nvdiffrecmc/geometry/dlmesh.py", line 27, in __init__
+    print(self.mesh.shape)
+AttributeError: 'Mesh' object has no attribute 'shape'

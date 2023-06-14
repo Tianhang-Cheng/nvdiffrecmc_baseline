@@ -1,0 +1,197 @@
+====== Scene: scan37 ======
+Using /homes/sanskar/.cache/torch_extensions/py39_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /homes/sanskar/.cache/torch_extensions/py39_cu116/optixutils_plugin/build.ninja...
+Building extension module optixutils_plugin...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module optixutils_plugin...
+Using mesh scale : 2.1, center : [ 0.01529887 -0.06911839 -0.2153489 ]
+Config / Flags:
+---------
+iter 1000
+batch 5
+spp 1
+layers 1
+train_res [600, 800]
+display_res [600, 800]
+texture_res [1024, 1024]
+display_interval 0
+save_interval 100
+learning_rate [0.03, 0.001]
+custom_mip False
+background white
+loss logl1
+out_dir out/scan37
+config configs/37.json
+ref_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/scan37
+base_mesh /homes/sanskar/mcnvdiffrec/nvdiffrecmc/dtu_data/mesh/37.obj
+validate True
+n_samples 8
+bsdf pbr
+denoiser bilateral
+denoiser_demodulate True
+mtl_override None
+dmtet_grid 64
+mesh_scale 2.1
+envlight None
+env_scale 1.0
+probe_res 256
+learn_lighting True
+display [{'latlong': True}, {'bsdf': 'kd'}, {'bsdf': 'ks'}, {'bsdf': 'normal'}]
+transparency False
+lock_light False
+lock_pos True
+sdf_regularizer 0.2
+laplace relative
+laplace_scale 3000.0
+pre_load True
+no_perturbed_nrm False
+decorrelated False
+kd_min [0.0, 0.0, 0.0, 0.0]
+kd_max [1.0, 1.0, 1.0, 1.0]
+ks_min [0.0, 0.08, 0.0]
+ks_max [0.0, 1.0, 1.0]
+nrm_min [-1.0, -1.0, 0.0]
+nrm_max [1.0, 1.0, 1.0]
+clip_max_norm 0.0
+cam_near_far [0.1, 1000.0]
+lambda_kd 0.1
+lambda_ks 0.05
+lambda_nrm 0.025
+lambda_nrm2 0.25
+lambda_chroma 0.0
+lambda_diffuse 0.15
+lambda_specular 0.0025
+random_textures True
+centre [ 0.01529887 -0.06911839 -0.2153489 ]
+---------
+/homes/sanskar/miniconda3/envs/nvdiffrec/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+End of OptiXStateWrapper 
+Using /homes/sanskar/.cache/torch_extensions/py39_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /homes/sanskar/.cache/torch_extensions/py39_cu116/renderutils_plugin/build.ninja...
+Building extension module renderutils_plugin...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+DatasetLLFF: 45 images with shape [600, 800]
+Auto centering at [ 0.01529887 -0.06911839 -0.2153489 ]
+DatasetLLFF: 4 images with shape [600, 800]
+Auto centering at [ 0.01529887 -0.06911839 -0.2153489 ]
+Cuda path /homes/sanskar/miniconda3/envs/nvdiffrec
+Base mesh has 251515 triangles and 126450 vertices.
+Avg edge length: 2.684922
+ninja: no work to do.
+Loading extension module renderutils_plugin...
+iter=    0, img_loss=0.314369, reg_loss=0.050165, lr=0.00000, time=1021.0 ms, rem=17.02 m
+iter=   10, img_loss=0.350255, reg_loss=0.057254, lr=0.00000, time=813.8 ms, rem=13.43 m
+iter=   20, img_loss=0.307029, reg_loss=0.054398, lr=0.00000, time=777.6 ms, rem=12.70 m
+iter=   30, img_loss=0.331219, reg_loss=0.059619, lr=0.00000, time=832.1 ms, rem=13.45 m
+iter=   40, img_loss=0.334975, reg_loss=0.059607, lr=0.00000, time=839.6 ms, rem=13.43 m
+iter=   50, img_loss=0.307623, reg_loss=0.054684, lr=0.00000, time=794.8 ms, rem=12.58 m
+iter=   60, img_loss=0.302260, reg_loss=0.054298, lr=0.00000, time=796.4 ms, rem=12.48 m
+iter=   70, img_loss=0.329571, reg_loss=0.059229, lr=0.00000, time=852.1 ms, rem=13.21 m
+iter=   80, img_loss=0.320321, reg_loss=0.057369, lr=0.00000, time=835.4 ms, rem=12.81 m
+iter=   90, img_loss=0.317693, reg_loss=0.056496, lr=0.00000, time=827.6 ms, rem=12.55 m
+iter=  100, img_loss=0.320476, reg_loss=0.056186, lr=0.00000, time=825.8 ms, rem=12.39 m
+iter=  110, img_loss=0.295828, reg_loss=0.053929, lr=0.00000, time=797.9 ms, rem=11.84 m
+iter=  120, img_loss=0.310188, reg_loss=0.055219, lr=0.00000, time=813.7 ms, rem=11.93 m
+iter=  130, img_loss=0.291888, reg_loss=0.052905, lr=0.00000, time=789.2 ms, rem=11.44 m
+iter=  140, img_loss=0.309122, reg_loss=0.055057, lr=0.00000, time=812.1 ms, rem=11.64 m
+iter=  150, img_loss=0.308566, reg_loss=0.056008, lr=0.00000, time=822.4 ms, rem=11.65 m
+iter=  160, img_loss=0.303516, reg_loss=0.054620, lr=0.00000, time=807.9 ms, rem=11.31 m
+iter=  170, img_loss=0.339215, reg_loss=0.059289, lr=0.00000, time=857.8 ms, rem=11.87 m
+iter=  180, img_loss=0.356083, reg_loss=0.061933, lr=0.00000, time=888.2 ms, rem=12.14 m
+iter=  190, img_loss=0.322362, reg_loss=0.057746, lr=0.00000, time=841.1 ms, rem=11.36 m
+iter=  200, img_loss=0.314061, reg_loss=0.056135, lr=0.00000, time=825.1 ms, rem=11.00 m
+iter=  210, img_loss=0.319534, reg_loss=0.057475, lr=0.00000, time=839.4 ms, rem=11.05 m
+iter=  220, img_loss=0.303290, reg_loss=0.054621, lr=0.00000, time=811.1 ms, rem=10.54 m
+iter=  230, img_loss=0.333684, reg_loss=0.058860, lr=0.00000, time=855.0 ms, rem=10.97 m
+iter=  240, img_loss=0.304477, reg_loss=0.054885, lr=0.00000, time=812.5 ms, rem=10.29 m
+iter=  250, img_loss=0.274918, reg_loss=0.050512, lr=0.00000, time=766.5 ms, rem=9.58 m
+iter=  260, img_loss=0.299598, reg_loss=0.054323, lr=0.00000, time=808.9 ms, rem=9.98 m
+iter=  270, img_loss=0.326346, reg_loss=0.058354, lr=0.00000, time=852.1 ms, rem=10.37 m
+iter=  280, img_loss=0.301517, reg_loss=0.054150, lr=0.00000, time=805.7 ms, rem=9.67 m
+iter=  290, img_loss=0.330674, reg_loss=0.058094, lr=0.00000, time=849.6 ms, rem=10.05 m
+iter=  300, img_loss=0.324235, reg_loss=0.058274, lr=0.00000, time=852.5 ms, rem=9.95 m
+iter=  310, img_loss=0.312665, reg_loss=0.055921, lr=0.00000, time=825.3 ms, rem=9.49 m
+iter=  320, img_loss=0.285753, reg_loss=0.052075, lr=0.00000, time=783.2 ms, rem=8.88 m
+iter=  330, img_loss=0.291064, reg_loss=0.053519, lr=0.00000, time=799.5 ms, rem=8.93 m
+iter=  340, img_loss=0.308248, reg_loss=0.055625, lr=0.00000, time=823.4 ms, rem=9.06 m
+iter=  350, img_loss=0.299049, reg_loss=0.053946, lr=0.00000, time=804.8 ms, rem=8.72 m
+iter=  360, img_loss=0.294604, reg_loss=0.053799, lr=0.00000, time=801.9 ms, rem=8.55 m
+iter=  370, img_loss=0.304921, reg_loss=0.055335, lr=0.00000, time=821.3 ms, rem=8.62 m
+iter=  380, img_loss=0.336571, reg_loss=0.059443, lr=0.00000, time=864.9 ms, rem=8.94 m
+iter=  390, img_loss=0.334010, reg_loss=0.057034, lr=0.00000, time=836.0 ms, rem=8.50 m
+iter=  400, img_loss=0.285870, reg_loss=0.051485, lr=0.00000, time=779.2 ms, rem=7.79 m
+iter=  410, img_loss=0.315850, reg_loss=0.055689, lr=0.00000, time=822.1 ms, rem=8.08 m
+iter=  420, img_loss=0.314732, reg_loss=0.056762, lr=0.00000, time=834.6 ms, rem=8.07 m
+iter=  430, img_loss=0.276245, reg_loss=0.051271, lr=0.00000, time=774.6 ms, rem=7.36 m
+iter=  440, img_loss=0.310830, reg_loss=0.055407, lr=0.00000, time=820.6 ms, rem=7.66 m
+iter=  450, img_loss=0.321604, reg_loss=0.057701, lr=0.00000, time=846.7 ms, rem=7.76 m
+iter=  460, img_loss=0.306287, reg_loss=0.054423, lr=0.00000, time=808.5 ms, rem=7.28 m
+iter=  470, img_loss=0.343992, reg_loss=0.060754, lr=0.00000, time=877.3 ms, rem=7.75 m
+iter=  480, img_loss=0.311724, reg_loss=0.055958, lr=0.00000, time=826.2 ms, rem=7.16 m
+iter=  490, img_loss=0.327949, reg_loss=0.057819, lr=0.00000, time=847.3 ms, rem=7.20 m
+iter=  500, img_loss=0.281917, reg_loss=0.052071, lr=0.00000, time=784.2 ms, rem=6.53 m
+iter=  510, img_loss=0.321852, reg_loss=0.057158, lr=0.00000, time=838.1 ms, rem=6.84 m
+iter=  520, img_loss=0.297044, reg_loss=0.054059, lr=0.00000, time=804.9 ms, rem=6.44 m
+iter=  530, img_loss=0.309786, reg_loss=0.055640, lr=0.00000, time=821.1 ms, rem=6.43 m
+iter=  540, img_loss=0.298621, reg_loss=0.053883, lr=0.00000, time=804.2 ms, rem=6.17 m
+iter=  550, img_loss=0.308966, reg_loss=0.054477, lr=0.00000, time=811.1 ms, rem=6.08 m
+iter=  560, img_loss=0.328578, reg_loss=0.057961, lr=0.00000, time=847.7 ms, rem=6.22 m
+iter=  570, img_loss=0.304333, reg_loss=0.054945, lr=0.00000, time=815.1 ms, rem=5.84 m
+iter=  580, img_loss=0.333319, reg_loss=0.058347, lr=0.00000, time=851.1 ms, rem=5.96 m
+iter=  590, img_loss=0.276361, reg_loss=0.050340, lr=0.00000, time=766.0 ms, rem=5.23 m
+iter=  600, img_loss=0.338720, reg_loss=0.059431, lr=0.00000, time=864.3 ms, rem=5.76 m
+iter=  610, img_loss=0.299623, reg_loss=0.053836, lr=0.00000, time=804.0 ms, rem=5.23 m
+iter=  620, img_loss=0.292600, reg_loss=0.052929, lr=0.00000, time=793.1 ms, rem=5.02 m
+iter=  630, img_loss=0.318155, reg_loss=0.056623, lr=0.00000, time=831.7 ms, rem=5.13 m
+iter=  640, img_loss=0.293328, reg_loss=0.053043, lr=0.00000, time=794.3 ms, rem=4.77 m
+iter=  650, img_loss=0.283025, reg_loss=0.052347, lr=0.00000, time=787.8 ms, rem=4.60 m
+iter=  660, img_loss=0.337955, reg_loss=0.059851, lr=0.00000, time=868.5 ms, rem=4.92 m
+iter=  670, img_loss=0.295209, reg_loss=0.053515, lr=0.00000, time=798.7 ms, rem=4.39 m
+iter=  680, img_loss=0.286048, reg_loss=0.052619, lr=0.00000, time=791.8 ms, rem=4.22 m
+iter=  690, img_loss=0.315821, reg_loss=0.057109, lr=0.00000, time=838.8 ms, rem=4.33 m
+iter=  700, img_loss=0.287365, reg_loss=0.052953, lr=0.00000, time=794.4 ms, rem=3.97 m
+iter=  710, img_loss=0.288752, reg_loss=0.053044, lr=0.00000, time=794.1 ms, rem=3.84 m
+iter=  720, img_loss=0.321011, reg_loss=0.057402, lr=0.00000, time=842.9 ms, rem=3.93 m
+iter=  730, img_loss=0.287376, reg_loss=0.053002, lr=0.00000, time=794.6 ms, rem=3.58 m
+iter=  740, img_loss=0.321071, reg_loss=0.055844, lr=0.00000, time=825.7 ms, rem=3.58 m
+iter=  750, img_loss=0.304657, reg_loss=0.055656, lr=0.00000, time=823.9 ms, rem=3.43 m
+iter=  760, img_loss=0.299086, reg_loss=0.053471, lr=0.00000, time=799.3 ms, rem=3.20 m
+iter=  770, img_loss=0.306729, reg_loss=0.055043, lr=0.00000, time=816.6 ms, rem=3.13 m
+iter=  780, img_loss=0.312968, reg_loss=0.056204, lr=0.00000, time=828.3 ms, rem=3.04 m
+iter=  790, img_loss=0.317845, reg_loss=0.057009, lr=0.00000, time=837.3 ms, rem=2.93 m
+iter=  800, img_loss=0.308642, reg_loss=0.055598, lr=0.00000, time=821.8 ms, rem=2.74 m
+iter=  810, img_loss=0.311314, reg_loss=0.056594, lr=0.00000, time=833.7 ms, rem=2.64 m
+iter=  820, img_loss=0.293147, reg_loss=0.053030, lr=0.00000, time=795.2 ms, rem=2.39 m
+iter=  830, img_loss=0.313516, reg_loss=0.056030, lr=0.00000, time=827.8 ms, rem=2.35 m
+iter=  840, img_loss=0.272403, reg_loss=0.049817, lr=0.00000, time=760.2 ms, rem=2.03 m
+iter=  850, img_loss=0.305410, reg_loss=0.055977, lr=0.00000, time=826.4 ms, rem=2.07 m
+iter=  860, img_loss=0.313482, reg_loss=0.056487, lr=0.00000, time=832.1 ms, rem=1.94 m
+iter=  870, img_loss=0.299817, reg_loss=0.053774, lr=0.00000, time=804.4 ms, rem=1.74 m
+iter=  880, img_loss=0.309708, reg_loss=0.054979, lr=0.00000, time=817.4 ms, rem=1.63 m
+iter=  890, img_loss=0.313886, reg_loss=0.056419, lr=0.00000, time=833.3 ms, rem=1.53 m
+iter=  900, img_loss=0.297342, reg_loss=0.054266, lr=0.00000, time=809.7 ms, rem=1.35 m
+iter=  910, img_loss=0.301797, reg_loss=0.054841, lr=0.00000, time=814.8 ms, rem=1.22 m
+iter=  920, img_loss=0.332244, reg_loss=0.058498, lr=0.00000, time=856.4 ms, rem=1.14 m
+iter=  930, img_loss=0.323206, reg_loss=0.058046, lr=0.00000, time=851.2 ms, rem=59.58 s
+iter=  940, img_loss=0.318959, reg_loss=0.056460, lr=0.00000, time=831.5 ms, rem=49.89 s
+iter=  950, img_loss=0.349452, reg_loss=0.061675, lr=0.00000, time=890.2 ms, rem=44.51 s
+iter=  960, img_loss=0.312274, reg_loss=0.056065, lr=0.00000, time=825.7 ms, rem=33.03 s
+iter=  970, img_loss=0.284798, reg_loss=0.052170, lr=0.00000, time=785.8 ms, rem=23.57 s
+iter=  980, img_loss=0.343199, reg_loss=0.059357, lr=0.00000, time=862.7 ms, rem=17.25 s
+iter=  990, img_loss=0.321652, reg_loss=0.057422, lr=0.00000, time=842.6 ms, rem=8.43 s
+iter= 1000, img_loss=0.301872, reg_loss=0.054683, lr=0.00000, time=814.0 ms, rem=0.00 s
+Running validation
+MSE,      PSNR
+0.07371491, 11.714
+Writing mesh:  out/scan37/mesh/mesh.obj
+    writing 126450 vertices
+    writing 147910 texcoords
+    writing 126450 normals
+    writing 251515 faces
+Writing material:  out/scan37/mesh/mesh.mtl
+Done exporting mesh
+OptiXStateWrapper destructor 
